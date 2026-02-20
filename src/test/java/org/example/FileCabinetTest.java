@@ -30,38 +30,51 @@ class FileCabinetTest {
 
     @Test
     void shouldFindFolderByName() {
+
+        //when
         Optional<Folder> result = cabinet.findFolderByName("Dokumenty");
 
+        //then
         assertTrue(result.isPresent());
         assertEquals(folder1, result.get());
     }
 
     @Test
     void shouldReturnEmptyOptionalWhenFolderNotFound() {
+        //when
         Optional<Folder> result = cabinet.findFolderByName("NonExisting");
 
+        //then
         assertTrue(result.isEmpty());
     }
 
     @Test
     void shouldFindFoldersBySize() {
+        //when
         List<Folder> result = cabinet.findFoldersBySize("MEDIUM");
 
+        //then
         assertEquals(2, result.size());
-
         assertEquals(result, List.of(folder3, folder4));
     }
 
     @Test
     void shouldReturnEmptyListWhenNoFoldersWithGivenSize() {
+        //when
         List<Folder> result = cabinet.findFoldersBySize("XS");
 
+        //then
         assertTrue(result.isEmpty());
     }
 
     @Test
     void shouldReturnCorrectCount() {
-        assertEquals(4, cabinet.count());
+
+        //when
+        int folderSize = cabinet.count();
+
+        //then
+        assertEquals(4, folderSize);
     }
 
 }

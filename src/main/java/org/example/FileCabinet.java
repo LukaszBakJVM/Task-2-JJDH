@@ -47,7 +47,6 @@ public class FileCabinet implements Cabinet, MultiFolder {
         return size;
     }
 
-
     @Override
     public int hashCode() {
         return Objects.hash(folderName, folders, size);
