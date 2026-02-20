@@ -24,7 +24,6 @@ class FileCabinetTest {
         folder2 = new FileCabinet.Builder().folderName("Zdjecia").size("LARGE").build();
         folder3 = new FileCabinet.Builder().folderName("Filmy").size("MEDIUM").build();
         folder4 = new FileCabinet.Builder().folderName("Muzyka").size("MEDIUM").build();
-
         cabinet = new FileCabinet.Builder().folders(List.of(folder1, folder2, folder3, folder4)).build();
     }
 
@@ -55,7 +54,7 @@ class FileCabinetTest {
 
         //then
         assertEquals(2, result.size());
-        assertEquals(result, List.of(folder3, folder4));
+        assertEquals(List.of(folder3, folder4),result);
     }
 
     @Test
