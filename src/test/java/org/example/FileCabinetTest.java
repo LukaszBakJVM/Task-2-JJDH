@@ -54,7 +54,7 @@ class FileCabinetTest {
 
         //then
         assertEquals(2, result.size());
-        assertEquals(List.of(folder3, folder4),result);
+        assertEquals(List.of(folder3, folder4), result);
     }
 
     @Test
